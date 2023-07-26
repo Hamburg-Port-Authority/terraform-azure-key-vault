@@ -62,9 +62,7 @@ variable "key_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
-    "Get", "List", "Delete", "Recover", "Purge", "Restore",
-    "Backup", "Update", "Create", "Decrypt", "Encrypt", "UnwrapKey", "WrapKey", "Import",
-    "SetIssuers", "GetIssuers", "ManageIssuers", "ListIssuers", "DeleteIssuers", "ManageContacts"
+    "Backup", "Create", "Decrypt", "Delete", "Encrypt", "Get", "Import", "List", "Purge", "Recover", "Restore", "Sign", "UnwrapKey", "Update", "Verify", "WrapKey"
   ]
 }
 
