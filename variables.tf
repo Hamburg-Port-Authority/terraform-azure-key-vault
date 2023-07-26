@@ -62,7 +62,9 @@ variable "key_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
-    "Get"
+    "Get", "List", "Delete", "Recover", "Purge", "Restore",
+    "Backup", "Update", "Create", "Decrypt", "Encrypt", "UnwrapKey", "WrapKey", "Import",
+    "SetIssuers", "GetIssuers", "ManageIssuers", "ListIssuers", "DeleteIssuers", "ManageContacts"
   ]
 }
 
@@ -70,7 +72,7 @@ variable "secret_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
-    "Get", "List", "Set", "Delete", "Recover", "Purge", "Restore", "Backup"
+    "Get", "List", "Set", "Delete", "Recover", "Purge", "Restore", "Backup", "Update"
   ]
 }
 
