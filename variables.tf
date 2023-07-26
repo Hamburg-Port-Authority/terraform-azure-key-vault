@@ -62,7 +62,26 @@ variable "key_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
-    "Backup", "Create", "Decrypt", "Delete", "Encrypt", "Get", "Import", "List", "Purge", "Recover", "Restore", "Sign", "UnwrapKey", "Update", "Verify", "WrapKey"
+    "Get",
+    "List",
+    "Update",
+    "Create",
+    "Import",
+    "Delete",
+    "Recover",
+    "Backup",
+    "Restore",
+    "GetRotationPolicy",
+    "SetRotationPolicy",
+    "Rotate",
+    "Encrypt",
+    "Decrypt",
+    "UnwrapKey",
+    "WrapKey",
+    "Verify",
+    "Sign",
+    "Purge",
+    "Release",
   ]
 }
 
@@ -70,7 +89,7 @@ variable "secret_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
-    "Get", "List", "Set", "Delete", "Recover", "Purge", "Restore", "Backup", "Update"
+    "Get", "List", "Set", "Delete", "Recover", "Purge", "Restore", "Backup"
   ]
 }
 
