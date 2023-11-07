@@ -38,8 +38,8 @@ resource "azurerm_key_vault_access_policy" "grant_access_policy" {
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = each.value
 
-  certificate_permissions = var.certificate_permissions
-  key_permissions         = var.key_permissions
-  secret_permissions      = var.secret_permissions
+  certificate_permissions = var.enable_certificates_permission ? var.full_certificate_permissions : []
+  key_permissions         = var.enable_keys_permission ? var.full_key_permissions : []
+  secret_permissions      = var.enable_secrets_permission ? var.full_secret_permissions : []
   storage_permissions     = var.storage_permissions
 }

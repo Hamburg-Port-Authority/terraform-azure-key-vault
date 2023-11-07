@@ -50,15 +50,49 @@ variable "key_vault_admin_object_ids" {
   default     = []
 }
 
-variable "certificate_permissions" {
+
+variable "enable_certificates_permission" {
+
+  type        = bool
+  default     = false
+  description = "value to enable certificate permissions"
+
+}
+variable "enable_keys_permission" {
+
+  type        = bool
+  default     = false
+  description = "value to enable keys permissions"
+
+}
+variable "enable_secrets_permission" {
+
+  type        = bool
+  default     = false
+  description = "value to enable secrets permissions"
+
+}
+variable "full_certificate_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
-    "Get"
+    "Create",
+    "Delete",
+    "DeleteIssuers",
+    "Get",
+    "GetIssuers",
+    "Import",
+    "List",
+    "ListIssuers",
+    "ManageContacts",
+    "ManageIssuers",
+    "SetIssuers",
+    "Update"
+
   ]
 }
 
-variable "key_permissions" {
+variable "full_key_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
@@ -85,11 +119,18 @@ variable "key_permissions" {
   ]
 }
 
-variable "secret_permissions" {
+variable "full_secret_permissions" {
   type        = list(string)
   description = "Optional list of permission"
   default = [
-    "Get", "List", "Set", "Delete", "Recover", "Purge", "Restore", "Backup"
+    "Get",
+    "List",
+    "Set",
+    "Delete",
+    "Recover",
+    "Purge",
+    "Restore",
+    "Backup"
   ]
 }
 
